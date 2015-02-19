@@ -1,0 +1,179 @@
+@import 'fonts';
+@import 'helper';
+@import 'mixins';
+@import 'dashboard';
+@import 'signup';
+@import 'responsive';
+@import 'common';
+@import 'modals';
+@import 'quiz';
+@import 'carSelector';
+@import 'carCustomizer';
+@import 'leaderboard';
+@import 'picturePublic';
+
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+a {
+    color: #00e;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #06e;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body,html {
+    min-height: 100%;
+    font-family: helvetica, helvetica-neue;
+    background-color: black;
+}
+
+html {
+  min-width: 265px;
+}
+
+.full-page-wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100%;
+  z-index: 2;
+  position: relative;
+  transition: left 0.25s;
+  -webkit-transition: left 0.25s;
+  box-shadow: -5px 0px 12px #111111;
+}
+
+/******************************** Header ********************************/
+div.header {
+  background-color: black;
+  position: relative;
+}
+
+div.header .title {
+  display:block;
+  width:100%;
+}
+
+div.header .title img {
+  margin: 0 auto 0.5% auto;
+  width: 67.5%;
+  display: block;
+}
+
+
+div.connect-pages {
+  background: url("/media/mobile/images/signup/signup-bg.jpg") no-repeat center top;
+  background-size: 100% auto;
+  position: relative;
+  min-height: 480px;
+}
+
+/******************************** Footer ********************************/
+
+
+
+footer {
+  color: rgb(137, 137, 137);
+  font-size: 10px;
+  line-height: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+  a, a:visited, a:active, a:hover {
+    color: rgb(137, 137, 137);
+  }
+  .social {
+    text-align: center;
+    padding: 20px 0 0;
+    #gradient > .vertical(#262929, #0e0e0e);
+    border-top: 1px solid #585858;
+  }
+  .legal {
+    padding: 20px;
+
+    .rating {
+      float: left;
+      img {
+        height: 50px;
+        opacity: 0.6;
+      }
+    }
+    .ford-logo {
+      float: right;
+      display: block;
+      width: 90px;
+      vertical-align:top;
+      img {
+        width: 100%;
+      }
+    }
+    .copyright {
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .rules {
+      margin-top: 20px;
+    }
+  }
+}

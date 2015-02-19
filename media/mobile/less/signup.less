@@ -1,0 +1,438 @@
+/****************************************************************************************************/
+/**************************************** Sign Up *************************************************/
+/****************************************************************************************************/
+#rules, #age-gate, #ineligible, #reconnect, #repermission, #transition, #sweepstakes {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+/********************************* Landing ****************************************/
+
+#landing {
+  padding: 13px;
+  padding-top: 130px;
+  &.landing-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 21px;
+    text-align: center;
+    .header {
+      margin-left: -10px;
+      margin-bottom: 10px;
+      border: none;
+      background-image: none;
+    }
+    .text {
+      color: #DEDEDE;
+      font-size: 14px;
+      margin: 0 auto;
+      text-align: left;
+      width: 320px;
+      padding: 0 8px 20px;
+      b {
+        font-family: "Avenir Medium", arial, halvetica, sans-serif;
+        font-weight: 400;
+      }
+      .blue {
+        color: #058BFC;
+      }
+    }
+    .buttons {
+      text-align: center;
+      .watch-trailer {
+        width: 280px;
+        margin: 10px 0;
+      }
+    }
+    .returning {
+      font-family: "Avenir", arial, halvetica, sans-serif;
+      text-align: center;
+      color: #DEDEDE;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+  }
+  .trailer-overlay {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    .close-btn {
+      background: url(/media/js/fancybox/source/fancybox_sprite.png);
+      height: 35px;
+      width: 35px;
+      right: 10px;
+      position: absolute;
+    }
+    iframe {
+      position: absolute;
+      top: 50%;
+      margin-top: -150px;
+    }
+  }
+}
+
+/********************************* Description ****************************************/
+
+div.signup {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  div.description {
+    text-align: left;
+    margin: 0 30px;
+    color: white;
+    font-family: 'Avenir Light', arial, halvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 15px;
+    ul {
+      text-transform: uppercase;
+      padding: 0 11px;
+      li {
+        padding-bottom: 15px;
+        line-height: 21px;
+        img {
+          height: 30px;
+          margin-top: -2px;
+        }
+      }
+    }
+    div.title img.pre-qualify {
+      width: 55%;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 4%;
+      margin-left: 1%;
+      &:first-child {
+        margin-top: 2.5%;
+      }
+    }
+  }
+}
+
+/********************************* Connect ****************************************/
+div.connect {
+  padding-bottom: 10%;
+}
+
+div.signup a.watch-trailer {
+  width: 82%;
+  margin: 0 auto 0 4%;
+  display: block;
+  img {
+    width: 100%;
+  }
+}
+
+/****************************************************************************************************/
+/**************************************** Age Gate *************************************************/
+/****************************************************************************************************/
+div.age-gate {
+  color: white;
+  font-family: 'Durandal Light', arial, halvetica, sans-serif;
+  letter-spacing: 1px;
+  font-size: 13px;
+  position: relative;
+  z-index: 1;
+  padding-top: 130px;
+  img.header {
+    background-image: none;
+    width: 83%;
+    margin: 0 auto;
+    display: block;
+    border: none;
+  }
+  form {
+    width: 80%;
+    margin: 0 auto 0 auto;
+    display: block;
+    margin-bottom: -20px;
+    .email-ctr input {
+      border: 0px solid;
+      width: 100%;
+      height: 29px;
+      border-radius: 4px;
+      margin-top: 5px;
+      padding-left: 10px;
+      font: 13px sans-serif;
+      color: #555;
+      font-weight: bold;
+      background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ebebeb), to(#cccccc));
+      background-image: -webkit-linear-gradient(top, #ebebeb 0%, #cccccc 100%);
+      background-image: -moz-linear-gradient(top, #ebebeb 0%, #cccccc 100%);
+      background-image: linear-gradient(to bottom, #ebebeb 0%, #cccccc 100%);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#ffcccccc', GradientType=0);
+    }
+    .error {
+      display: none;
+      color: red;
+      font-size: 13px;
+      padding-top: 3px;
+      font-family: "Avenir Light", arial, halvetica, sans-serif;
+    }
+    > div {
+      margin-bottom: 20px;
+    }
+    .opt-ins {
+      font-size: 14px;
+      font-family: "Avenir Light", arial, halvetica, sans-serif;
+      label {
+        display: block;
+        div {
+          float: left;
+          width: 85%;
+          &:first-child {
+            width: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+      input {
+        vertical-align: top;
+        width: 20px;
+        height: 20px;
+        margin-top: 1px;
+      }
+      a {
+        text-decoration: underline;
+        color: white;
+      }
+      .info {
+        width: 100%;
+        padding-top: 20px;
+        color: #bbb;
+      }
+      .terms {
+        margin-bottom: 20px;
+      }
+    }
+    div.email-ctr, div.age-gate form div.dob-ctr, div.age-gate form div.opt-ins {
+      margin-top: 10px;
+    }
+    .dob-ctr {
+      div:first-child {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        select {
+          margin-left: 5px;
+        }
+      }
+      select.hasCustomSelect {
+        width: 23.20% !important;
+        cursor: hand;
+        cursor: pointer;
+      }
+      span.customSelect {
+        margin-right: 5px;
+        font: 12px sans-serif;
+        text-align: center;
+        font-weight: bold;
+        background: transparent url(/media/images/signup/select.png) right center no-repeat;
+        color:#555;
+        padding: 9px 0;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px 2px;
+        width: 29.76%;
+        height:31px;
+        .customSelectInner {
+          padding-right: 60px;
+        }
+      }
+    }
+  }
+  div.connect {
+    overflow: auto;
+    text-align: center;
+    .returning {
+      font-family: "Avenir", arial, halvetica, sans-serif;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      color: #ADADAD;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+    img.facebook-connect {
+      display: block;
+      margin: 0 auto;
+      margin-top: 5%;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+#ineligible {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 480px;
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50% 12.5%;
+  text-align: center;
+}
+
+#reconnect {
+  padding-top: 130px;
+  text-align: left;
+  .content {
+    font-size: 14px;
+    color: #DEDEDE;
+    width: 250px;
+    margin: 0 auto;
+    > img {
+      margin-left: -9px;
+    }
+    .text {
+      text-align: left;
+    }
+  }
+  .toolbar {
+    text-align: center;
+    margin-top: 20px;
+    .join {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#repermission {
+  padding-top: 130px;
+  .content {
+    font-size: 14px;
+    font-family: "Avenir Light", arial, halvetica, sans-serif;
+    color: white;
+    width: 300px;
+    margin: 0 auto;
+    .copy {
+      padding: 7px;
+    }
+  }
+  .opt-ins {
+    margin: 10px 0;
+    font-size: 14px;
+    .terms {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      div:first-child {
+        width: 20px;
+        float: left;
+      }
+      div:last-child {
+        margin-left: 22px;
+        float: left;
+        margin-top: -22px;
+      }
+    }
+    input {
+      vertical-align: top;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+    }
+    a {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+  .toolbar {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+#transition {
+  text-align: center;
+  color: white;
+  .content {
+    font-size: 14px;
+    font-family: "Avenir Light", arial, halvetica, sans-serif;
+    width: 320px;
+    margin: 0 auto;
+    padding-top: 130px;
+    .header {
+      margin-left: -5px;
+      margin-bottom: 10px;
+      border: none;
+      background-image: none;
+    }
+    .story {
+      text-align: left;
+      padding: 0 20px;
+    }
+  }
+  .toolbar {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+#sweepstakes {
+  .content {
+    font-size: 14px;
+    font-family: "Avenir Light", arial, halvetica, sans-serif;
+    color: white;
+    width: 270px;
+    margin: 0 auto;
+    padding-top: 130px;
+    h1 {
+      font-family: "Durandal Light", san-serif;
+      font-weight: bold;
+      font-size: 26px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 7px black, 2px 2px 5px black;
+    }
+    .header {
+      display: block;
+      margin: 0 0 10px -8px;
+      border: none;
+      background-image: none;
+    }
+    .opt-ins {
+      margin-top: 10px;
+      font-size: 14px;
+      label {
+        display: block;
+        div:first-child {
+          width: 20px;
+          float: left;
+        }
+        div:last-child {
+          margin-left: 22px;
+          float: left;
+          margin-top: -18px;
+        }
+        a {
+          text-decoration: underline;
+          color: white;
+        }
+      }
+    }
+  }
+  .toolbar {
+    text-align: center;
+    margin-top: 10px;
+  }
+}

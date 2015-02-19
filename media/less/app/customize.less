@@ -1,0 +1,735 @@
+#customize-modal {
+
+  .modal-dialog {
+    .magnaflow {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+
+  @blue: #27a7fc;
+  @yellow: #ffcf0a;
+  @red: #d30000;
+  @green: #6cc800;
+  @white: #d4cdc5;
+  @black: #2e2e2e;
+
+  &.car0 {
+    .cat.selected[cat="color"] {
+      & ~ div.modifications-wrapper {
+        .mod-option:nth-child(1) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @black;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @white;
+        }
+      }
+    }
+  }
+  &.car1 {
+    .cat.selected[cat="color"] {
+      & ~ div.modifications-wrapper {
+        .mod-option:nth-child(1) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+  &.car2 {
+    .cat.selected[cat="color"] {
+      & ~ div.modifications-wrapper {
+        .mod-option:nth-child(1) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+  &.car3 {
+    .cat.selected[cat="color"] {
+      & ~ div.modifications-wrapper {
+        .mod-option:nth-child(1) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+  &.car4 {
+    .cat.selected[cat="color"] {
+      & ~ div.modifications-wrapper {
+        .mod-option:nth-child(1) > .color {
+          background-color: @black;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @white;
+        }
+      }
+    }
+  }
+  &.car5 {
+    .cat.selected[cat="color"] {
+      & ~ div.modifications-wrapper {
+        .mod-option:nth-child(1) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+
+  #customizer-loader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &.submit {
+      opacity: 1;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .modal-content {
+    height: 665px;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+
+
+    .title {
+      height: 30px;
+      top: -10px;
+      left: -10px;
+      position: relative;
+      text-align: left;
+      button {
+        margin-top: 10px;
+      }
+    }
+
+    .modal-content-ctr {
+      background-image: url(/media/images/dashboard/customize/bg.jpg);
+      width: 949px;
+      height: 630px;
+      position: relative;
+    }
+
+    .car-ctn {
+      position: absolute;
+      width: 100%;
+      left: 0;
+	  top: -13px;
+	  z-index: 4;
+    }
+
+    .car-type-ctr {
+      position: relative;
+      margin: 0 auto;
+      text-align:center;
+      top: 55px;
+      width: 100%;
+
+      .car-type-header {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    .submit-ctn {
+      text-align: center;
+      width: 437px;
+      height: 100px;
+      margin: 0 auto;
+      left: 72px;
+      position: relative;
+      top: 550px;
+      z-index: 10;
+      .apply-changes {
+        display: block;
+        float: left;
+        cursor: pointer;
+        z-index: 6;
+      }
+      .speaker {
+        display: block;
+        float: left;
+        margin-top: 13px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+    .detail-wrapper {
+      position: absolute;
+      bottom: 98px;
+      left: 50%;
+      height: 115px;
+      width: 800px;
+    }
+    .detail-ctr {
+      height: 100%;
+      width: 100%;
+      left: -50%;
+      position: relative;
+      background-image: url(/media/images/dashboard/customize/detail-ctr-fill.png);
+      box-shadow: 0px 3px 12px 0px black;
+      z-index: 6;
+
+      .cat {
+        float: left;
+        margin-left: 50px;
+        line-height: 37px;
+        color: #aaa;
+
+        font-family: "Durandal", arial, halvetica, sans-serif;
+        font-size: 15px;
+        letter-spacing: .5px;
+        opacity: 1;
+
+        cursor: pointer;
+        cursor: hand;
+
+        background: -webkit-linear-gradient(#e8e8e8, #5d5d5d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
+        &:hover, &.selected {
+          color: #d4d4d4;
+          -webkit-text-fill-color: #d4d4d4;
+        }
+        &.selected {
+          cursor: default;
+
+          &.enabled ~ div.modifications-wrapper .modifications-overlay {
+            z-index: 0;
+            opacity: 0;
+          }
+
+          &[cat="color"] {
+            & ~ div.modifications-wrapper {
+              .modifications-overlay .lock:after {
+                content: ' ';
+              }
+              .mod-option .color {
+                opacity: 1;
+              }
+            }
+          }
+
+          &[cat="tint"] {
+            & ~ div.modifications-wrapper {
+
+              .modifications-overlay .lock:after {
+                content: 'Available February 10';
+              }
+
+              div.modifications {
+                width: 320px;
+              }
+
+              .mod-option .color {
+                opacity: 1;
+              }
+
+              .mod-option:nth-child(1) .color {
+                background-color: #404040;
+              }
+              .mod-option:nth-child(2) .color {
+                background-color: #262626;
+              }
+              .mod-option:nth-child(3) .color {
+                background-color: #191919;
+              }
+              .mod-option:nth-child(4) .color {
+                background-color: #000000;
+              }
+            }
+          }
+
+          &[cat="wheels"] {
+            & ~ div.modifications-wrapper {
+
+              .modifications-overlay .lock:after {
+                content: 'Available February 17';
+              }
+
+              div.modifications {
+                width: 320px;
+              }
+
+              .mod-option {
+                label {
+                  width: 60px;
+                  height: 60px;
+                  top: 10px;
+                  left: 10px;
+                }
+
+                .wheel {
+                  opacity: 1;
+                }
+                .border {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+          &[cat="spoiler"] {
+            & ~ div.modifications-wrapper {
+
+              .modifications-overlay .lock:after {
+                content: 'Available February 24';
+              }
+
+              div.modifications {
+                width: 400px;
+              }
+
+              .mod-option {
+
+                &:first-child {
+                  div {
+                    border-radius:26px;
+                  }
+                  .none, .border, .none-border {
+                    opacity: 1;
+                  }
+                  label {
+                    width:52px;
+                    height:52px;
+                    top:14px;
+                    left:14px;
+                  }
+                }
+
+                label {
+                  width: 70px;
+                  height: 40px;
+                  top: 25px;
+                  left: 8px;
+                }
+
+                .spoiler {
+                  opacity: 1;
+                }
+                .border {
+                  opacity: 0;
+                }
+              }
+
+            }
+          }
+          &[cat="decal"] {
+            & ~ div.modifications-wrapper {
+              .modifications-overlay .lock:after {
+                content: 'Available March 03';
+              }
+
+              div.modifications {
+                width: 400px;
+              }
+
+              .mod-option {
+                &:first-child {
+                  div {
+                    border-radius:26px;
+                  }
+                  .none, .none-border {
+                    opacity: 1;
+                  }
+                  label {
+                    width:52px;
+                    height:52px;
+                    top:14px;
+                    left:14px;
+                  }
+                }
+
+                .decal {
+                  opacity: 1;
+
+                }
+              }
+            }
+          }
+          &[cat="shadow"] {
+            & ~ div.modifications-wrapper {
+
+              .modifications-overlay .lock:after {
+                content: 'Available March 10';
+              }
+
+              div.modifications {
+                width: 240px;
+              }
+
+              .mod-option {
+                &:first-child {
+                  div {
+                    border-radius:26px;
+                  }
+                  .none, .none-border {
+                    opacity: 1;
+                  }
+                  label {
+                    width:52px;
+                    height:52px;
+                    top:14px;
+                    left:14px;
+                  }
+                }
+                .neon {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        &:first-child {
+          margin-left: 48px;
+        }
+      }
+
+      .modifications-wrapper {
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .modifications-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        z-index: 1000;
+
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
+        .bg {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          background-color: rgba(0,0,0,0.8);
+          z-index: 1;
+        }
+
+        .lock {
+          height: 80%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          z-index: 2;
+          bottom: 0;
+          top: 0;
+
+          &:after {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-family: "Avenir Medium", arial, halvetica, sans-serif;
+            font-weight: 900;
+            letter-spacing: .5px;
+            display: inline-block;
+            width: 175px;
+            text-align: left;
+          }
+
+          > img {
+            height: 100%;
+          }
+        }
+      }
+
+      .modifications {
+        height: 100%;
+        width: 480px;
+        overflow:hidden;
+        z-index: 1;
+
+        margin: 0 auto;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+
+        .mod-inner-wrapper {
+          width: 600px;
+        }
+
+
+        .mod-option {
+          display: inline;
+          float: left;
+          width: 80px;
+          height: 80px;
+          position: relative;
+
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -ms-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          > input[type=radio] {
+            display: none;
+
+            &:checked ~ div.border {
+              border: 4px solid white;
+            }
+          }
+
+          > label, > div {
+            display: block;
+            width: 52px;
+            height: 52px;
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            border-radius: 10px;
+            margin: 0;
+          }
+
+          > label {
+            cursor: pointer;
+            z-index: 101;
+          }
+
+          > div {
+            opacity: 0;
+
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            &:not(.border) {
+              -webkit-transition: all 0.3s ease-in-out;
+              -moz-transition: all 0.3s ease-in-out;
+              -ms-transition: all 0.3s ease-in-out;
+              -o-transition: all 0.3s ease-in-out;
+              transition: all 0.3s ease-in-out;
+            }
+            &:not(.spoiler) {
+              background-size: 100% 100%;
+            }
+
+            &.border {
+              border: 2px solid #bbb;
+              z-index: 20;
+              opacity: 1;
+
+              -webkit-transition: all 0.2s ease-in-out;
+              -moz-transition: all 0.2s ease-in-out;
+              -ms-transition: all 0.2s ease-in-out;
+              -o-transition: all 0.2s ease-in-out;
+              transition: all 0.2s ease-in-out;
+            }
+            &.wheel {
+              height: 80px;
+              width: 80px;
+              top: 0;
+              left: 0;
+            }
+            &.spoiler:not(.none) {
+              width: 80px;
+              height: 40px;
+              top: 15px;
+              left: 0;
+
+              width: 80px;
+              height: 50px;
+              top: 15px;
+              left: 0;
+
+            }
+
+            &.none {
+              background-size: 100% 100%;
+              background-image: url("/media/images/dashboard/customize/none.png");
+              border-radius: 26px;
+            }
+            &.none-border {
+              border-radius:26px;
+              width:48px;
+              height:48px;
+              margin: 2px;
+
+              border: 2px #8e0000 solid;
+            }
+          }
+
+          &:nth-child(1) {
+
+          }
+
+          &:nth-child(2) {
+            .neon {
+              background-image: url("/media/images/dashboard/customize/shadow/neon1.png");
+            }
+            .spoiler {
+              background-image: url("/media/images/dashboard/customize/spoilers/spoiler1.png");
+            }
+
+            input[type=radio]:checked ~ div {
+              &.spoiler {
+                background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler1.png");
+              }
+            }
+          }
+
+          &:nth-child(3) {
+            .neon {
+              background-image: url("/media/images/dashboard/customize/shadow/neon2.png");
+            }
+            .spoiler {
+              background-image: url("/media/images/dashboard/customize/spoilers/spoiler2.png");
+            }
+            input[type=radio]:checked ~ div {
+              &.spoiler {
+                background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler2.png");
+              }
+            }
+          }
+
+          &:nth-child(4) {
+            .spoiler {
+              background-image: url("/media/images/dashboard/customize/spoilers/spoiler3.png");
+            }
+            input[type=radio]:checked ~ div {
+              &.spoiler {
+                background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler3.png");
+              }
+            }
+          }
+
+          &:nth-child(5) {
+            .spoiler {
+              background-image: url("/media/images/dashboard/customize/spoilers/spoiler4.png");
+            }
+            input[type=radio]:checked ~ div {
+              &.spoiler {
+                background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler4.png");
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+# # Required
+# # --------
+# 
+# scheme: ftp
+# host: waws-prod-bay-001.ftp.azurewebsites.windows.net
+# username: nfs-prod\$nfs-prod
+# password: mEuZ5KnlC5jR9wHunW7Kv40i9wcw2itmki4AEwYCCQ89sRN0n3HTZvnpHqHg
+# 
+# # Optional
+# # --------
+# 
+# # Remote path
+# path: /site/wwwroot
+# 
+# # Remote file name in which the current revision is stored
+# revision_file: .revision
+# 
+# # These files (from Git) will not be uploaded during a deploy
+# exclude:
+#     - .gitignore
+#     - dandelion.yml
+# 
+# # These files (from your working directory) will be uploaded on every deploy
+# # additional:
+# #     - public/css/print.css
+# #     - public/css/screen.css
+# #     - public/js/mobile.js
+
+
+# Required
+# --------
+
+scheme: ftp
+host: ec2-54-204-43-118.compute-1.amazonaws.com
+username: RacD30nT0
+password: qJPkaVBdyVta
+
+# Optional
+# --------
+
+# Remote path
+# path: /var/www/html/
+
+# Remote file name in which the current revision is stored
+revision_file: .revision
+
+# These files (from Git) will not be uploaded during a deploy
+exclude:
+    - .gitignore
+    - dandelion.yml
+
+# These files (from your working directory) will be uploaded on every deploy
+# additional:
+#     - public/css/print.css
+#     - public/css/screen.css
+#     - public/js/mobile.js

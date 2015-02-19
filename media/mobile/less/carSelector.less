@@ -1,0 +1,439 @@
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
+body.carselect {
+  overflow: hidden;
+}
+#carselect-loader-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+#carselect {
+  &.active, &.loaded {
+    & ~ header {
+      display:none;
+    }
+    & ~ #dashboard {
+      display: none;
+    }
+    & ~ nav {
+      display: none;
+    }
+    & ~ footer {
+      display: none;
+    }
+
+  }
+
+  &.loaded {
+    .content-wrapper .content > .title .tagline {
+      opacity: 1;
+    }
+    #carselector-nav {
+      opacity: 1;
+    }
+  }
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+
+  background: rgb(7,7,7); /* Old browsers */
+  background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(8,8,8,1) 50%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,1)), color-stop(50%,rgba(8,8,8,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* W3C */
+
+  .content-wrapper {
+    max-width: 400px;
+    max-height: 533px;
+    min-width: 280px;
+
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    background: url("/media/mobile/images/carselect/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: table;
+
+    > .title {
+      position: absolute;
+      height: 25%;
+      width: 100%;
+
+      img.logo {
+        display: block;
+        margin: 0 auto;
+        max-height: 60%;
+        max-width: 77%;
+      }
+
+      .choose-your-car {
+        display: block;
+        margin: 0 auto;
+        margin-top: -12px;
+        max-width: 64%;
+        max-height: 25%;
+      }
+    }
+
+    .tagline {
+      font-size: 16px;
+      color: white;
+      font-family: "Avenir Medium";
+      letter-spacing: 0.5px;
+      text-align: center;
+      width: 80%;
+      margin: 1.2% auto 0 auto;
+      line-height: 18px;
+      opacity: 0;
+
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .cars-ctn {
+      width: 100%;
+      display: table-cell;
+      vertical-align: middle;
+
+      > .cars {
+        width:100%;
+        position: relative;
+        overflow: hidden;
+        margin-top: -14%;
+
+        > .empty-space {
+          padding-top: 53.5%;
+        }
+
+        .car {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 1;
+          display: none;
+
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -ms-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+
+          > img {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+          }
+
+          &.unloaded {
+            left: 30%;
+            opacity: 0;
+          }
+
+          &.prev {
+            left: -100%;
+          }
+          &.next {
+            left: 100%;
+          }
+
+          &.active, &.inmotion, &.next, &.prev {
+            display: block;
+          }
+
+          &.inmotion ~ .car-titles .title {
+            opacity: 0 !important;
+          }
+        }
+
+
+        .car-titles {
+          height: 35px;
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+
+          .car-titles-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
+
+          .title {
+            opacity: 0;
+            width: 100%;
+            text-align: center;
+            height: 35px;
+            position: absolute;
+            top: 0;
+
+            font-family: Durandal;
+            color: #777777;
+            font-size: 19px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), -2px -2px 8px rgba(0, 0, 0, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+#carselector-nav {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 35%;
+  max-height: 35%;
+  padding-top: 3%;
+  opacity: 0;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  position: absolute;
+
+  .nav-inner {
+    position: relative;
+    height:100%;
+    text-align: center;
+  }
+
+
+  .selector {
+    width: 100%;
+    max-height: 43%;
+    margin: 0 auto;
+    position: relative;
+
+    > .empty-space {
+      padding-top:15%;
+    }
+
+    .selector-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      > a {
+        height: 100%;
+        width: 9%;
+        vertical-align: top;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        display: inline-block;
+        float: left;
+
+
+        &.left {
+          background-image: url("/media/images/dashboard/carselect/left-arrow.png");
+        }
+
+        &.right {
+          background-image: url("/media/images/dashboard/carselect/right-arrow.png");
+        }
+      }
+    }
+
+    .cat-buttons-wrapper {
+      position: absolute;
+      width: 82%;
+      height: 100%;
+    }
+
+    div.car-buttons {
+      width: 82%;
+      height: 100%;
+      display: block;
+      float: left;
+      overflow: hidden;
+      position: relative;
+
+      .car-buttons-inner {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        height: 66%;
+        max-height: 66%;
+
+        > .empty-space {
+          padding-top: 12%;
+        }
+      }
+
+      .car {
+        display: none;
+        position: absolute;
+        width: 30.4%;
+        height: 100%;
+        top: -50%;
+
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -ms-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+
+        &.inmotion, &.active, &.prev, &.next, &.nextnext, &.prevprev {
+          display: block;
+        }
+
+        &.active {
+          left: 34.3%;
+
+          .car-inner {
+            border-color: white;
+          }
+        }
+
+        &.prev {
+          left: 0;
+        }
+        &.next {
+          left: 68.7%;
+        }
+
+        &.nextnext {
+          left: 100%;
+        }
+
+        &.prevprev {
+          left: -34.3%;
+        }
+
+        &.nextnext:not(.inmotion), &.prevprev:not(.inmotion) {
+          .car-inner {
+            -webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0);
+            -moz-box-shadow:    0px 3px 10px 1px rgba(0, 0, 0, 0);
+            box-shadow:         0px 3px 10px 1px rgba(0, 0, 0, 0);
+          }
+        }
+
+
+
+        .car-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          border: 2px solid transparent;
+
+          background: -moz-linear-gradient(left,  rgba(60,60,60,0.8) 0%, rgba(38,38,38,0.8) 100%); /* FF3.6+ */
+          background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(60,60,60,0.8)), color-stop(100%,rgba(38,38,38,0.8))); /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(left,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(left,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* Opera 11.10+ */
+          background: -ms-linear-gradient(left,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* IE10+ */
+          background: linear-gradient(to right,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3c3c3c', endColorstr='#cc262626',GradientType=1 ); /* IE6-9 */
+
+          -webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.8);
+          -moz-box-shadow:    0px 3px 10px 1px rgba(0, 0, 0, 0.8);
+          box-shadow:         0px 3px 10px 1px rgba(0, 0, 0, 0.8);
+          border-radius: 3px;
+
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+
+          .more-car {
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 2.5%;
+            width: 95%;
+            max-height: 176%;
+            height: 200%;
+
+            > .empty-space {
+              margin-top: 67%;
+            }
+          }
+
+          img {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            top: -42%;
+            left: 0;
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-ctr {
+    text-align: center;
+    width: 197px;
+    height: 54px;
+    margin: 0 auto;
+    left: 22px;
+    position: relative;
+    .accept {
+      display: block;
+      float: left;
+    }
+    .speaker {
+      display: block;
+      float: left;
+      margin-top: 13px;
+    }
+  }
+}
+
+.magnaflow {
+  margin-top: 20px;
+}
+
+.carmodelsloop(@index) when (@index >= 0) {
+  #carselect #car-model-@{index}.active:not(.unloaded) ~ .car-titles .title.car-model-@{index} {
+    opacity: 1;
+    z-index: 6;
+  }
+  .carmodelsloop(@index - 1);
+}
+.carmodelsloop(-1){}
+  .carmodelsloop(5);

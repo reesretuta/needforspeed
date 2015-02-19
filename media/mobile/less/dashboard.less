@@ -1,0 +1,504 @@
+/******************************** All-content ********************************/
+div.all-dashboard-content {
+  background: url("/media/mobile/images/background.jpg") no-repeat center top;
+  background-size: 100% auto;
+}
+
+img.logo {
+  margin: 0px 0 20px 0;
+  display: block;
+  max-width: 100%;
+}
+
+/******************************** Dashboard ********************************/
+nav {
+  display: none;
+  width: 100%;
+  height: 100%;
+  #gradient > .vertical(#313030, #141414);
+  color: white;
+  position: absolute;
+  z-index: 1;
+  transition: width 0.25s;
+  -webkit-transition: width 0.25s;
+
+  .row {
+    height: 47px;
+    #gradient > .vertical(#313030, #141414);
+    border-bottom: 1px solid #333;
+    font-family: "Avenir Medium";
+    font-size: 15px;
+    &.rank, &.score {
+      padding-top: 4px;
+      img {
+        display: block;
+        float: left;
+      }
+      span {
+        display: block;
+        float: left;
+        padding-top: 9px;
+      }
+    }
+    &.score {
+      span {
+        padding-top: 8px;
+      }
+    }
+    &.my-car, &.map-leaderboard, &.how-to {
+      padding-top: 3px;
+    }
+  }
+  .button {
+    padding-left: 10px;
+    line-height: 2.5em;
+    #gradient > .vertical-with-image(#313030, #141414, 0%, 100%, url("/media/mobile/images/dashboard/menu/arrow.png"), 70%, 40%);
+  }
+  .speaker {
+    #gradient > .vertical-with-image(#313030, #141414, 0%, 100%, url("/media/mobile/images/dashboard/menu/speaker.png"), 70%, 40%);
+  }
+}
+
+.header {
+  #gradient > .vertical(#313030, #141414);
+  border-bottom: 1px solid #333;
+  .notification-qty {
+    font-family: "Avenir Light", arial, halvetica, sans-serif;
+    color: white;
+    height: 25px;
+    width: 25px;
+    background-color: orangered;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    line-height: 25px;
+    text-shadow: 0 0 7px black, 0 0 7px black;
+    border-radius: 2px;
+    margin-left: 13px;
+    float: right;
+    margin: 10px 20px 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+div.dashboard {
+  position:relative;
+  overflow:hidden;
+  .pts {
+    color: white;
+    position: absolute;
+    bottom: 4%;
+    width: 100%;
+    text-align: center;
+    span {
+      position: relative;
+      top: 1px;
+      font-family: "Avenir Medium";
+      font-size: 15px;
+    }
+  }
+  img.background {
+    width:100%;
+    position:absolute;
+    left:0;
+    z-index:0;
+  }
+  div.hello-outer {
+    position: absolute;
+    padding-top: 33%;
+    height: 5%;
+    width: 100%;
+  }
+  div.hello-inner {
+    color: white;
+    font-family: "Durandal Light", arial, halvetica, sans-serif;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  div.hello-inner:before {
+    content:"Hi, ";
+  }
+  div.profile-outer {
+    position: absolute;
+    display: block;
+    width: 29.8%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+  img.profile-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    top: 4.5%;
+    left: 3.7%;
+    margin: auto;
+    display: block;
+    width: 100%;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+  }
+  .score {
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top: 70%;
+    left: 0;
+    right: 0;
+
+    > .empty-space {
+      padding-top: 20.25%;
+    }
+
+    img {
+      position: absolute;
+      display: block;
+      width: 90%;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .points-wrapper {
+      padding-right: 21%;
+      padding-left: 30.3%;
+      position: absolute;
+      top: 18%;
+      width: 100%;
+      height: 44%;
+      font-family: 'Durandal Light', arial, halvetica, sans-serif;
+
+    }
+    .points-ctr {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      .digit {
+        color: #ff6600;
+        text-shadow: 1px 1px 5px black;
+        font-size: 16px;
+        width: 12.6%;
+        text-align: center;
+        height: 100%;
+        line-height: 33px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .week {
+      width: 21%;
+      position: absolute;
+      font-family: "Durandal Light";
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      top: 18%;
+      left: 8%;
+    }
+  }
+  > div.empty-space {
+    padding-top: 110%;
+  }
+}
+
+
+.recruit-ctr {
+  text-align: center;
+  height: 150px;
+  padding: 20px 0;
+  .network-frame {
+    cursor: pointer;
+  }
+}
+
+
+
+/******************************** Customize Ride ********************************/
+div.customize-tout {
+  position:relative;
+  overflow: hidden;
+  background-image: url("/media/mobile/images/dashboard/customize.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  .car-ctn {
+    position: absolute;
+    width: 80%;
+    top: 3%;
+    margin: auto;
+    left: 0;
+    right: 0;
+
+    .mycar {
+      width:100%;
+      img {
+        width:100%;
+      }
+
+      div{
+        position:absolute;
+        top:0;
+        left:0;
+        &.decal{
+          z-index: 10;
+        }
+        &.tint{
+          z-index: 9;
+        }
+        &.color {
+          z-index: 8;
+        }
+        &.spoiler{
+          z-index: 7;
+        }
+        &.wheels{
+          z-index: 6;
+        }
+        &.shadow{
+          z-index: 5;
+        }
+      }
+    }
+
+  }
+
+
+  div.empty-space {
+    padding-top: 52.8125%;
+  }
+}
+
+
+/******************************** Share ********************************/
+div.share {
+  position: relative;
+  img {
+    width: 100%;
+  }
+}
+
+.prize {
+  img {
+    width: 100%;
+  }
+}
+
+.start-engines {
+  img {
+    width: 100%;
+  }
+  div.countdown-ctn {
+    width: 85%;
+    margin: 0 auto;
+  }
+  div.countdown {
+    width: 100%;
+    margin: -33% auto 7% auto;
+    .timer-ctr {
+      position: relative;
+      width: 100%;
+      top: 10px;
+      text-align: center;
+      h2 {
+        font-family: "Durandal Light", arial, halvetica, sans-serif;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        color: #ff0000;
+        display: inline-block;
+        width: 19%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        span {
+          width: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+/******************************** Modules ********************************/
+div.modules {
+  background-color: black;
+  img {
+    width: 100%;
+  }
+  div.buffer {
+    margin-top: 45.3%;
+  }
+  .activity {
+    margin-top: -30px;
+    cursor: pointer;
+    &.completed {
+      pointer-events: none;
+      cursor: default;
+      > img {
+        opacity: 0.5;
+      }
+      &[activity-type=youtube] {
+        pointer-events: auto;
+        > img {
+          opacity: 1;
+        }
+      }
+    }
+    .inactive {
+      display: none;
+    }
+    &.disabled {
+      pointer-events: none;
+      cursor: default;
+      background-color: black;
+      > img {
+        opacity: 0.4;
+      }
+      .inactive {
+        display: block;
+        position: absolute;
+        margin: -222px 0 0 110px;
+        color: white;
+        position: absolute;
+        height: 130px;
+        width: 112px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-family: "Avenir Medium", arial, halvetica, sans-serif;
+        font-weight: 900;
+        z-index: 10;
+        text-align: center;
+      }
+    }
+    .finished-indicator {
+      background-image: url(/media/images/dashboard/activity/checkbox-sprite.png);
+      font-family: "Durandal Light", arial, halvetica, sans-serif;
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 5px 0 0 39px;
+      background-position: 0 -33px;
+      background-repeat: no-repeat;
+      height: 30px;
+      position: relative;
+      left: 3px;
+      top: 36px;
+      z-index: 10;
+      &.checked {
+        background-position: 0 -3px;
+      }
+    }
+  }
+}
+
+
+/******************************** Social Media ********************************/
+div.social-media {
+  background-image: url("/media/mobile/images/socialbg.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  overflow: hidden;
+  position: relative;
+  div.module-content {
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 2%;
+  }
+  div.hash {
+    background: url('/media/images/dashboard/hash.jpg') no-repeat center top;
+    background-size: 100% auto;
+    width: 85%;
+    padding-top: 54.6%;
+    font-size: 27px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    font-family: "Avenir Black", arial, halvetica, sans-serif;
+    position: relative;
+    margin: 0 auto 3% auto;
+  }
+  div.feed {
+    opacity: 0;
+    margin-bottom: 40px;
+    div.activity {
+      position: relative;
+      margin: 0 auto 3% auto;
+      padding: 3%;
+      line-height: 14px;
+      font-size: 13px;
+      width: 85%;
+      &.instagram {
+        padding: 0;
+        height: 100%;
+        img {
+          width: 100%;
+        }
+        div.instagram-tag {
+          font-family:'Avenir Light', arial, halvetica, sans-serif;
+          position: relative;
+          bottom: 25px;
+          text-align: right;
+          margin-right: 20px;
+          color: white;
+          text-shadow: 0px 0px 1px black, 0px 0px 10px black, 0px 0px 10px black;
+        }
+      }
+      img.network-icon {
+        float: left;
+        margin: 9px 10px 0 -5px;
+      }
+      &.twitter {
+        height: 115px;
+        background-color: rgba(0,0,0,0.4);
+        div.content {
+          color: white;
+          position: absolute;
+          top: 50%;
+          left: 90px;
+          padding-right: 20px;
+          a {
+            text-decoration: underline;
+            color: #428bca;
+          }
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
+.digitloop(@index) when (@index > 1) {
+  div.dashboard .score .points-ctr .digit:nth-child(@{index}) {
+   left: percentage(round((@index - 1) * 0.1443,4));
+  }
+
+  .digitloop(@index - 1);
+}
+// end the loop when index is 0
+.digitloop(1) {}
+
+// "call" the loopingClass the first time with highest value
+.digitloop(7);

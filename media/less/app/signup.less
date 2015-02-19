@@ -1,0 +1,407 @@
+body.index {
+  min-width: 1000px;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  float: left;
+  margin: 20px 30px;
+}
+.in-theaters {
+  float: right;
+  margin: 60px 40px;
+}
+
+.modal {
+  width: 755px;
+  height: 365px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  overflow: hidden;
+  color: white;
+  .title {
+    .close {
+      opacity: 0.7;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .modal-ctr {
+    margin-top: 30px;
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+  }
+  .toolbar {
+    background-color: black;
+    height: 85px;
+    line-height: 85px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: left;
+    img {
+      margin-left: 33px;
+    }
+    .returning {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0 13px 8px 0;
+      line-height: 20px;
+      font-size: 10px;
+      font-weight: bold;
+      color: #ddd;
+      cursor: pointer;
+    }
+  }
+}
+
+#landing.landing-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 200px;
+  text-align: center;
+  .container {
+    width: 938px;
+    .buttons {
+      margin-top: 10px;
+      height: 58px;
+      z-index: 9;
+      position: relative;
+      .join-ctr {
+        float: left;
+        margin-left: 69px;
+        .returning {
+          line-height: 20px;
+          font-size: 11px;
+          font-weight: bold;
+          color: #eee;
+          cursor: pointer;
+          text-shadow: 1px 1px 2px black, 1px 1px 6px black, 1px 1px 6px black, 1px 1px 2px black;
+          position: relative;
+          margin-left: 5px;
+        }
+      }
+      .trailer-ctr {
+        float: right;
+        margin-right: 78px;
+      }
+    }
+  }
+}
+
+#reconnect {
+  display: none;
+  height: 285px;
+  .modal-ctr {
+    padding: 40px 80px;
+    text-shadow: 1px 1px 4px black;
+    .content {
+      margin: 5px 8px;
+    }
+    .toolbar {
+      text-align: center;
+      img {
+        margin: 0;
+        &:first-child {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+#rules {
+  .modal-ctr {
+    width: 100%;
+    text-align: center;
+    img.header {
+      margin-top: 40px;
+    }
+    .rules {
+      margin: 10px 140px 0 60px;
+      text-align: left;
+      font-family: "Avenir Light", sans-serif;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      li {
+        margin-bottom: 15px;
+        &:first-child {
+          line-height: 22px;
+        }
+      }
+      img {
+        height: 34px;
+        margin-top: -3px;
+      }
+    }
+    .toolbar img {
+      margin-left: 225px;
+    }
+  }
+}
+
+#age-gate {
+  height: 385px !important;
+  .modal-ctr {
+    width: 100%;
+    height: 100%;
+    text-shadow: 1px 1px 4px black;
+    img.header {
+      margin: 20px 0 20px 32px;
+    }
+    form {
+      margin-left: 40px;
+      font-family: "Avenir Light", san-serif;
+      .email-ctr {
+        float: left;
+        width: 325px;
+        margin-bottom: 20px;
+        input {
+          border: 0px solid;
+//          box-shadow: 0px 0px 4px 1px black inset;
+          width: 300px;
+          height: 29px;
+          border-radius: 4px;
+          margin-top: 1px;
+          padding-left: 20px;
+          font: 14px sans-serif;
+          color: #555;
+          font-weight: bold;
+          #gradient > .vertical(#ebebeb, #ccc);
+        }
+      }
+      .dob-ctr {
+        float: left;
+        width: 375px;
+        span.customSelect {
+          margin-right: 5px;
+          font:14px sans-serif;
+          text-align: center;
+          font-weight: bold;
+          background: transparent url(/media/images/signup/select.png) right center no-repeat;
+          color:#555;
+          padding:7px 9px;
+          -moz-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          border-radius: 2px 2px;
+          width:99px;
+          height:31px;
+          text-shadow: none;
+          .customSelectInner {
+            padding-right: 60px;
+          }
+        }
+        select {
+          margin: -1px 0 0 10px;
+        }
+      }
+      .field-lbl{
+        font-family: "Durandal Light", san-serif;
+        font-size: 15px;
+        margin-bottom: 3px;
+      }
+      .opt-ins {
+        font-size: 12px;
+        label {
+          display: block;
+          font-family: "Avenir Light", san-serif;
+          color: #c4c4c4;
+		  a {
+			color:#fff;
+			text-decoration:underline;
+		  }
+          input {
+            vertical-align: top;
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+          }
+        }
+        .error {
+          padding-bottom: 5px;
+        }
+        .info {
+          color: #c4c4c4;
+          font-size: 11px;
+          padding: 10px 40px 0 0;
+        }
+      }
+      .error {
+        display: none;
+        color: red;
+        font-size: 13px;
+        padding-top: 3px;
+      }
+    }
+  }
+  .toolbar {
+    img {
+     margin-left: 215px;
+    }
+  }
+}
+
+#transition {
+  @media (max-height: 835px) {
+    margin-top: 60px;
+  }
+  
+  .close{
+	  display:none;
+  }
+  &.modal {
+    width: 896px;
+    height: 552px;
+  }
+  .toolbar, .modal-ctr {
+    text-align: center;
+  }
+  .title button {
+    position: relative;
+    top: 20px;
+  }
+  .modal-ctr {
+    margin-top: 50px;
+    label {
+      display: block;
+      font-family: "Avenir Light", san-serif;
+      color: #c4c4c4;
+      margin-top: -65px;
+      text-shadow: 1px 1px 4px black, 1px 1px 4px black;
+      a {
+        color:#fff;
+        text-decoration:underline;
+      }
+      input {
+        vertical-align: top;
+        width: 20px;
+        height: 20px;
+        margin-top: 1px;
+      }
+    }
+    > img:first-child {
+      margin: 10px 0 10px 70px;
+    }
+    .story {
+      position: relative;
+      top: -55px;
+      width: 100%;
+      padding: 0 50px;
+      text-shadow: 1px 1px 4px black, 1px 1px 4px black;
+      font-size: 15px;
+      text-align: left;
+      font-family: "Avenir Medium";
+      br {
+        margin-bottom: 10px;
+      }
+    }
+    h1 {
+      font-family: "Durandal Light", san-serif;
+      font-size: 27px;
+      color: #eee;
+      text-shadow: 2px 2px 7px black, 2px 2px 5px black;
+      padding: 10px 0 3px 0;
+    }
+  }
+}
+
+#sweepstakes {
+  height: 335px;
+  .modal-ctr {
+    margin-top: 0;
+    text-shadow: 1px 1px 4px black;
+    .content {
+      padding: 40px;
+      color: #c4c4c4;
+      font-family: "Avenir Light", san-serif;
+      h1 {
+        font-family: "Durandal Light", san-serif;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 7px black, 2px 2px 5px black;
+      }
+      label {
+        display: block;
+        color: #c4c4c4;
+        margin-top: 15px;
+        a {
+          color:#fff;
+          text-decoration:underline;
+        }
+        input {
+          vertical-align: top;
+          width: 20px;
+          height: 20px;
+          margin-top: 1px;
+        }
+      }
+    }
+    .toolbar {
+      img {
+        margin-left: 250px;
+      }
+    }
+  }
+}
+
+#repermission {
+  height: 335px;
+  .modal-ctr {
+    margin-top: 0;
+    text-shadow: 1px 1px 4px black;
+    .content {
+      padding: 40px;
+      color: #c4c4c4;
+      font-family: "Avenir Light", san-serif;
+      h1 {
+        font-family: "Durandal Light", san-serif;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 7px black, 2px 2px 5px black;
+      }
+      label {
+        display: block;
+        color: #c4c4c4;
+        margin-top: 15px;
+        a {
+          color:#fff;
+          text-decoration:underline;
+        }
+        input {
+          vertical-align: top;
+          width: 20px;
+          height: 20px;
+          margin-top: 1px;
+        }
+      }
+    }
+    .toolbar {
+      img {
+        margin-left: 250px;
+      }
+    }
+  }
+}
+
+#ineligible {
+  .modal-ctr {
+    text-align: center;
+    font-size: 30px;
+    padding: 140px;
+    height: 100%;
+  }
+}

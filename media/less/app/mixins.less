@@ -1,0 +1,47 @@
+.rotate(@deg: 0deg) {
+  -moz-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+  -webkit-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+.transitionEase(@time: 0.2s, @target: all) {
+  -webkit-transition: @target @time ease-in-out;
+  -moz-transition: @target @time ease-in-out;
+  -ms-transition: @target @time ease-in-out;
+  -o-transition: @target @time ease-in-out;
+  transition: @target @time ease-in-out;
+}
+
+.box-shadow(4, @shadow1, @shadow2, @shadow3, @shadow4) {
+  -webkit-box-shadow: @shadow1, @shadow2, @shadow3, @shadow4;
+  -moz-box-shadow:    @shadow1, @shadow2, @shadow3, @shadow4;
+  box-shadow:         @shadow1, @shadow2, @shadow3, @shadow4;
+}
+
+.box-shadow(3, @shadow1, @shadow2, @shadow3) {
+  -webkit-box-shadow: @shadow1, @shadow2, @shadow3;
+  -moz-box-shadow:    @shadow1, @shadow2, @shadow3;
+  box-shadow:         @shadow1, @shadow2, @shadow3;
+}
+
+.box-shadow(2, @shadow1, @shadow2) {
+  -webkit-box-shadow: @shadow1, @shadow2;
+  -moz-box-shadow:    @shadow1, @shadow2;
+  box-shadow:         @shadow1, @shadow2;
+}
+
+.box-shadow(1, @shadow1) {
+  -webkit-box-shadow: @shadow1;
+  -moz-box-shadow:    @shadow1;
+  box-shadow:         @shadow1;
+}
+.box-shadow(0) {}
+
+
+.border-radius(@radius: 0px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}

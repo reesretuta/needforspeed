@@ -1,0 +1,203 @@
+html,body {
+  height: 100%;
+  background-color: black;
+}
+body {
+  font-family: "Avenir Light", arial, halvetica, sans-serif;
+}
+h1, h2 {
+  font-family: "Avenir Medium", arial, halvetica, sans-serif;
+}
+
+.load-overlay {
+  display: none;
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 100000;
+}
+
+footer {
+  @grey: #666;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  z-index:999;
+  color: @grey;
+  text-transform: uppercase;
+  a:link, a:visited, a:hover, a:active {
+    color: @grey;
+    text-decoration: underline;
+  }
+  .top-ctr {
+    border-top: 1px solid #444;
+    .copyright {
+      text-align: left;
+      font-size: 10px;
+      font-family: Arial, Halvetica, sans-serif;
+      float: left;
+      line-height: 12px;
+      margin: 12px 0 0px 34px;
+      img {
+        margin-right: 20px;
+      }
+      div {
+        float: left;
+        &:last-child {
+          margin-top: 9px;
+        }
+      }
+      .short {
+        display: none;
+      }
+      @media (max-width: 1055px) {
+        margin-bottom: 8px;
+        .short {
+          display: inline;
+        }
+        .long {
+          display: none;
+        }
+        .not-yet-rated {
+          margin-top: 5px;
+        }
+      }
+    }
+    .followus{
+      float:right;
+      margin: 22px 0 0 0;
+    }
+    .social-btns {
+      float: right;
+      vertical-align: baseline;
+      display: inline-block;
+      margin: 14px 15px;
+      @media (max-width: 1055px) {
+        margin-top: 8px;
+      }
+      @media (max-width: 1082px) {
+        display: none;
+      }
+    }
+    .rating {
+      margin: -3px 10px 10px 0;
+      img {
+        height: 50px;
+        opacity: 0.5;
+      }
+    }
+  }
+  .clearfix {
+    #gradient > .vertical(rgba(40,40,40,0.6), rgba(20,20,20,0.8));
+  }
+  .legal {
+    #gradient > .vertical(rgba(40,40,40,0.6), rgba(20,20,20,0.8));
+    border-top: 1px solid #444;
+    float: left;
+    font-size: 9px;
+    line-height: 11px;
+    font-weight: normal;
+    float: right;
+    padding: 10px 20px 5px 10px;
+    .ford-logo {
+      float: left;
+      width: 110px;
+    }
+    .copy {
+      float: left;
+      margin-left: 130px;
+      margin-top: -44px;
+    }
+    span {
+      font-size: 11px;
+    }
+    .ford img {
+      height: 40px;
+      float: left;
+      margin: 0 20px 0 22px;
+    }
+  }
+}
+
+.official-rules {
+  background-color: #222;
+  text-transform: none;
+  color: white;
+  width: 80%;
+  height: 80%;
+  padding: 20px;
+  overflow-y: scroll;
+  text-align: left;
+  margin: 0 auto;
+  position: relative;
+  top: 10%;
+  border: 1px solid white;
+  strong {
+    text-decoration: underline;
+  }
+  h1 {
+    margin-top: 0;
+  }
+  @media (max-width: 600px) {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    top: 0;
+    overflow-y: inherit;
+    h1, h2 {
+      font-size: 18px;
+    }
+  }
+  table, th, td {
+    border: 1px solid grey;
+  }
+}
+
+.play-ctr {
+  width: 77px;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 100;
+  img.play-btn {
+    top: 50%;
+    position: absolute;
+    z-index: 100;
+  }
+}
+
+button {
+  &.orange {
+    #gradient > .vertical(@btn-light, @btn-dark);
+    font-family: "Avenir Medium", arial, halvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 0px 2px 5px black;
+    border: none;
+    .box-shadow(0px 0px 10px 4px black);
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 8px 20px;
+    &:hover, &:active, &:visited, &:focus {
+      color: white !important;
+      #gradient > .vertical(@btn-light, @btn-dark);
+      .box-shadow(0px 0px 10px 4px black);
+    }
+  }
+}
+
+.fancybox-inner {
+  background-color: black;
+}
+
+.cta {
+  cursor: pointer;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.5);
+}

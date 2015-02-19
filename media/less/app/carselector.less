@@ -1,0 +1,574 @@
+/************************* Car Select *************************/
+body.carselect {
+  overflow: hidden;
+}
+#carselect-loader-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+#carselect {
+  &.active {
+    & ~ header {
+      display:none;
+    }
+    & ~ #dashboard {
+      display: none;
+    }
+    & ~ footer {
+      display: none;
+    }
+  }
+
+  &.loaded {
+    .content-wrapper .content .title {
+      opacity: 1;
+    }
+    .content-wrapper .content .nav {
+      opacity: 1;
+    }
+  }
+
+  width: 100%;
+  height: 100%;
+  min-height: 660px;
+  min-width: 960px;
+  position: fixed;
+  z-index: 1000;
+
+  background: rgb(7,7,7); /* Old browsers */
+  background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(8,8,8,1) 50%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,1)), color-stop(50%,rgba(8,8,8,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(8,8,8,1) 50%,rgba(0,0,0,1) 100%); /* W3C */
+
+  .carselect-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    > .title {
+      position: absolute;
+      z-index: 5;
+      top: 12.625%;
+      width: 100%;
+      display: none;
+
+      > img {
+        width: 335px;
+        display: block;
+        margin: 0 auto;
+      }
+      .tagline {
+        font-size: 16px;
+        color: white;
+        font-family: "Avenir Medium";
+        letter-spacing: 0.5px;
+        text-align: center;
+      }
+    }
+  }
+
+
+
+
+  .header {
+    width:100%;
+    max-height: 135px;
+    height: 15%;
+
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+
+    img {
+      display: block;
+      margin: 0;
+    }
+    .logo {
+      position: absolute;
+      left: 0;
+      height: 100%;
+    }
+    .in-theaters {
+      height: 28.88%;
+      position: absolute;
+      right: 3%;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+  }
+
+  .bg-fade {
+    width:100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    .top {
+      height: 15%;
+      max-height: 135px;
+    }
+    .rest {
+      height: 100%;
+      background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(25%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    }
+  }
+
+
+  .content-wrapper {
+    position:absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    max-height: 768px;
+    height: 100%;
+    .content {
+      position: relative;
+      top: -50%;
+      width: 100%;
+      height: 100%;
+      background: url("/media/images/dashboard/carselect/background.jpg") repeat-x bottom center;
+
+      .bg-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        background: url("/media/images/dashboard/carselect/background_overlay.png") no-repeat bottom center;
+        background-size: 100% auto;
+      }
+
+      > .title {
+        position: absolute;
+        z-index: 5;
+        top: 15.625%;
+        width: 100%;
+        opacity: 0;
+
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
+        > img {
+          width: 335px;
+          display: block;
+          margin: 0 auto;
+        }
+        .tagline {
+          font-size: 16px;
+          color: white;
+          font-family: "Avenir Medium";
+          letter-spacing: 0.5px;
+          text-align: center;
+        }
+      }
+
+      > .cars {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        bottom: 0;
+        left: 0;
+
+        .car {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 7.8125%;
+          height: 82.8125%;
+
+          display: none;
+          opacity: 1;
+
+
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -ms-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+
+
+          img {
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+          }
+
+          &.unloaded {
+            left: 30%;
+            opacity: 0;
+          }
+
+          &.prev {
+            left: -100%;
+          }
+          &.next {
+            left: 100%;
+          }
+
+          &.active, &.inmotion, &.next, &.prev {
+            display: block;
+          }
+
+          &.inmotion ~ .car-titles .title {
+            opacity: 0 !important;
+          }
+        }
+
+
+        .car-titles {
+          height: 35px;
+          position: absolute;
+          width: 100%;
+          top: 60.54%;
+
+          .car-titles-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
+
+          .title {
+            opacity: 0;
+            width: 100%;
+            text-align: center;
+            height: 35px;
+            position: absolute;
+            top: 0;
+
+            font-family: Durandal;
+            color: #777777;
+            font-size: 19px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), -2px -2px 8px rgba(0, 0, 0, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+
+            > img {
+              display: block;
+              left: -50%;
+              position: relative;
+            }
+          }
+        }
+      }
+
+      .nav {
+        width: 100%;
+        height: 28.93%;
+
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
+        .buffer {
+          height: 42.86%;
+          width: 100%;
+        }
+
+        .selector {
+          width: 468px;
+
+          //height: 30.77%;
+          height: 40px;
+          margin: 0 auto;
+
+          > a {
+            display: inline-block;
+            height: 100%;
+            width: 36px;
+            vertical-align: top;
+            background-repeat: no-repeat;
+            background-position: center center;
+            float: left;
+
+            &.left {
+              background-image: url("/media/images/dashboard/carselect/left-arrow.png");
+            }
+
+            &.right {
+              background-image: url("/media/images/dashboard/carselect/right-arrow.png");
+            }
+          }
+
+          .car-buttons-inner {
+            position: relative;
+            top: -50%;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+          }
+          div.car-buttons {
+            width: 396px;
+            height: 150%;
+            position: relative;
+            display: inline-block;
+            float: left;
+            top: 50%;
+
+            .car {
+              display: none;
+              position: absolute;
+              height: 66%;
+              bottom: 0;
+              top: 0;
+              margin: auto;
+              padding: 0 4px;
+
+
+              -webkit-transition: all 0.4s ease-in-out;
+              -moz-transition: all 0.4s ease-in-out;
+              -ms-transition: all 0.4s ease-in-out;
+              -o-transition: all 0.4s ease-in-out;
+              transition: all 0.4s ease-in-out;
+
+              &.inmotion, &.active, &.prev, &.next, &.nextnext, &.prevprev {
+                display: block;
+              }
+
+              &.active {
+                left: 132px;
+
+                .car-inner .border {
+                  opacity: 1;
+                }
+              }
+
+              &.inmotion {
+                .car-inner .border {
+                  opacity: 0 !important;
+                }
+              }
+
+              &.prev {
+                left: 0;
+
+                cursor: hand;
+                cursor: pointer;
+              }
+              &.next {
+                left: 264px;
+
+                cursor: hand;
+                cursor: pointer;
+              }
+
+              &.nextnext {
+                left: 396px;
+              }
+
+              &.prevprev {
+                left: -132px;
+              }
+
+              &.nextnext:not(.inmotion), &.prevprev:not(.inmotion) {
+                .car-inner {
+                  -webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0);
+                  -moz-box-shadow:    0px 3px 10px 1px rgba(0, 0, 0, 0);
+                  box-shadow:         0px 3px 10px 1px rgba(0, 0, 0, 0);
+                }
+              }
+
+
+
+              .car-inner {
+                position: relative;
+                width: 124px;
+                height: 100%;
+
+                background: -moz-linear-gradient(left,  rgba(60,60,60,0.8) 0%, rgba(38,38,38,0.8) 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(60,60,60,0.8)), color-stop(100%,rgba(38,38,38,0.8))); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(left,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(left,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(left,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* IE10+ */
+                background: linear-gradient(to right,  rgba(60,60,60,0.8) 0%,rgba(38,38,38,0.8) 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3c3c3c', endColorstr='#cc262626',GradientType=1 ); /* IE6-9 */
+
+                -webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.8);
+                -moz-box-shadow:    0px 3px 10px 1px rgba(0, 0, 0, 0.8);
+                box-shadow:         0px 3px 10px 1px rgba(0, 0, 0, 0.8);
+                border-radius: 3px;
+
+                .img-wrapper {
+                  position: relative;
+                  top: 50%;
+                  height: 180%;
+                }
+
+
+                .border {
+                  position: absolute;
+                  left: -3px;
+                  top: -3px;
+                  z-index: 2;
+                  opacity: 0;
+
+                  width: 132px;
+                  height: 53px;
+
+                  background: url("/media/images/dashboard/carselect/border.png") no-repeat top left;
+                  background-position: -8px -9px;
+
+                  -webkit-transition: all 0.2s ease-in-out;
+                  -moz-transition: all 0.2s ease-in-out;
+                  -ms-transition: all 0.2s ease-in-out;
+                  -o-transition: all 0.2s ease-in-out;
+                  transition: all 0.2s ease-in-out;
+                }
+                img {
+                  position: relative;
+                  z-index: 1;
+                  top: -43%;
+                  display: block;
+                  margin: 0 auto;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        .accept {
+          display: block;
+          width: 298px;
+          height: 63px;
+          margin: 0 auto;
+          margin-top: 20px;
+        }
+        .btn-ctr {
+          text-align: center;
+          width: 337px;
+          height: 100px;
+          margin: 0 auto;
+          left: 22px;
+          position: relative;
+          .accept {
+            display: block;
+            float: left;
+          }
+          .speaker {
+            display: block;
+            float: left;
+            margin-top: 31px;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    position: absolute;
+    .magnaflow {
+      position: absolute;
+      top: -40px;
+      right: 10px;
+    }
+  }
+}
+
+.carmodelsloop(@index) when (@index >= 0) {
+  #carselect #car-model-@{index}.active:not(.unloaded) ~ .car-titles .title.car-model-@{index} {
+    opacity: 1;
+    z-index: 6;
+  }
+.carmodelsloop(@index - 1);
+}
+.carmodelsloop(-1){}
+.carmodelsloop(5);
+
+
+
+@media (min-height: 726px) and (max-height: 830px) {
+  #carselect .content-wrapper .content .nav {
+    bottom: 5%;
+
+    .accept {
+      margin-top: 0px;
+    }
+
+    .btn-ctr .speaker {
+      margin-top: 11px;
+    }
+  }
+}
+
+@media (max-height: 725px) {
+  #carselect .carselect-inner > .title {
+    display: block;
+  }
+
+  #carselect .content-wrapper {
+
+    .content > .title {
+      display: none;
+    }
+    .content > .cars .car {
+      top: 4%;
+    }
+
+    .content > .cars .car-titles {
+      top: 54.54%;
+    }
+
+    .content .nav {
+      bottom: 9%;
+
+      .accept {
+        margin-top: 0px;
+      }
+
+      .btn-ctr .speaker {
+        margin-top: 11px;
+      }
+    }
+  }
+}
+
+#carselect {
+  footer {
+    .long {
+      display: inline !important;
+    }
+    .short {
+      display: none !important;
+    }
+    .top-ctr .copyright .not-yet-rated {
+      margin-top: 0;
+    }
+
+  }
+}

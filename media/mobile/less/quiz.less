@@ -1,0 +1,277 @@
+#quiz-loader {
+  z-index: 9999998;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.quiz {
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  top: 10%;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9), -1px -1px 5px rgba(0, 0, 0, 0.9);
+  &.photo {
+    .content.photo {
+      display: block;
+    }
+    .title {
+      background-image: url("/media/images/dashboard/quiz/title-photo.png");
+      background-size: 214px;
+      background-position-y: 7px;
+    }
+  }
+  &.text {
+    .content.text {
+      display: block;
+    }
+  }
+  .title {
+    height: 41px;
+    width:100%;
+    position: relative;
+    background: url("/media/images/dashboard/quiz/title-quiz.png") top left no-repeat;
+    background-position-y: 3px;
+    .close {
+      display: block;
+      float: none;
+      opacity: 0.7;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -ms-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .content {
+    display: none;
+    position: relative;
+    border-top: 2px solid rgb(42,42,42);
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    .bg-fade {
+      width:100%;
+      height: 170px;
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      &.top {
+        top: 0;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.6)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+      }
+      &.bottom {
+        bottom: 0;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.35))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.35) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.35) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.35) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.35) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#59000000',GradientType=0 ); /* IE6-9 */
+      }
+    }
+    .content-inner {
+      position:relative;
+      z-index: 1;
+      overflow: auto;
+    }
+    .media {
+      position: relative;
+      margin: 30px auto 0 auto;
+      background-color: rgba(21,21,21,0.7);
+      -webkit-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.75), -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow:    1px 1px 10px 0px rgba(0, 0, 0, 0.75), -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+      box-shadow:         1px 1px 10px 0px rgba(0, 0, 0, 0.75), -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 0;
+        top: 0;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+        &.hint {
+          z-index: 1;
+        }
+        &.answer {
+          z-index: 2;
+          opacity: 0;
+          position: absolute;
+          &.active {
+            opacity: 1;
+            & + .hint {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .all-items {
+      overflow: auto;
+      width: 100%;
+      &.photo {
+        display: none;
+      }
+      .item {
+        margin-bottom: 50px;
+        &:first-child {
+          margin-top: 25px;
+        }
+        &:last-child {
+          margin-bottom: 25px;
+        }
+        .question {
+          font-family: "Avenir Medium", arial, halvetica, sans-serif;
+          font-size: 14px;
+          text-align: left;
+          margin: 0 20px;
+        }
+        .answers {
+          margin: 0 auto;
+          input[type=radio] {
+            display: none;
+          }
+          div.option {
+            position: relative;
+            margin: 0 9px;
+            margin-top: 8px;
+            display:inline-block;
+            .option-shadow {
+              position: absolute;
+              z-index: 0;
+              top: 0;
+              left: 0;
+              width: 280px;
+              height: 31px;
+              margin-top: 2px;
+              -webkit-transition: all .3s ease-in-out;
+              -moz-transition: all .3s ease-in-out;
+              -ms-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+              -webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.7);
+              -moz-box-shadow:    0px 0px 7px 3px rgba(0, 0, 0, 0.7);
+              box-shadow:         0px 0px 7px 3px rgba(0, 0, 0, 0.7);
+            }
+            .option-shadow, label {
+              -webkit-border-radius: 6px;
+              -moz-border-radius: 6px;
+              border-radius: 6px;
+            }
+            label {
+              position: relative;
+              z-index: 1;
+              display: block;
+              width: 280px;
+              height: 35px;
+              line-height: 30px;
+              text-align: left;
+              vertical-align: top;
+              margin-bottom: 0;
+              padding-left: 15px;
+              font-size: 12px;
+              font-family: "Avenir Light", arial, halvetica, sans-serif;
+              letter-spacing: 0.5px;
+              background-color: #dcdcdc;
+              background-image: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.67) 100%); /* FF3.6+ */
+              background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.67))); /* Chrome,Safari4+ */
+              background-image: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.67) 100%); /* Chrome10+,Safari5.1+ */
+              background-image: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.67) 100%); /* Opera 11.10+ */
+              background-image: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.67) 100%); /* IE10+ */
+              background-image: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.67) 100%); /* W3C */
+              border: 2px solid;
+              border-color: transparent;
+              -webkit-transition: all .3s ease-in-out;
+              -moz-transition: all .3s ease-in-out;
+              -ms-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+              -moz-background-clip: padding;
+              -webkit-background-clip: padding;
+              background-clip: padding-box;
+            }
+            input[type=radio]:checked:not(.incorrect) + label {
+              border-color: white;
+              -moz-box-shadow:    inset 0 0 15px 0px rgba(255,255,255,0.65);
+              -webkit-box-shadow: inset 0 0 15px 0px rgba(255,255,255,0.65);
+              box-shadow:         inset 0 0 15px 0px rgba(255,255,255,0.65);
+            }
+            input[type=radio].incorrect + label {
+              background-color: #525252;
+              -webkit-box-shadow: inset 2px 1px 0px 0px rgba(150, 150, 150, 0.35);
+              -moz-box-shadow:    inset 2px 1px 0px 0px rgba(150, 150, 150, 0.35);
+              box-shadow:         inset 2px 1px 0px 0px rgba(150, 150, 150, 0.35);
+            }
+            input[type=radio]:checked:not(.incorrect) ~ div.option-shadow {
+              -webkit-box-shadow: 0px 0px 7px 3px rgba(255,255,255,0.7);
+              -moz-box-shadow:    0px 0px 7px 3px rgba(255,255,255,0.7);
+              box-shadow:         0px 0px 7px 3px rgba(255,255,255,0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #quiz-footer {
+    width: 100%;
+    height: 85px;
+    .submit-btn {
+      width: 298px;
+      height: 63px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px;
+      &.inactive {
+        display: none;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .result-message {
+      text-align: center;
+      font-family: "Durandal Light";
+      color: #ddd;
+      font-size: 20px;
+      text-shadow: 2px 2px 5px black, 2px 2px 10px black;
+      &.inactive {
+        display: none;
+      }
+    }
+  }
+}
+

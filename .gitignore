@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+.sass-cache/
+/system/application/cache/main+start/
+/system/application/cache/
+/codekit-config.json
+
+codekit-config.json

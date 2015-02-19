@@ -1,0 +1,930 @@
+
+
+#customize-modal {
+
+  @blue: #27a7fc;
+  @yellow: #ffcf0a;
+  @red: #d30000;
+  @green: #6cc800;
+  @white: #d4cdc5;
+  @black: #2e2e2e;
+
+  &.car0 {
+    select[data-category="color"] {
+      & ~ div.modifications {
+        .mod-option:nth-child(1) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @black;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @white;
+        }
+      }
+    }
+  }
+  &.car1 {
+    select[data-category="color"] {
+      & ~ div.modifications {
+        .mod-option:nth-child(1) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+  &.car2 {
+    select[data-category="color"] {
+      & ~ div.modifications {
+        .mod-option:nth-child(1) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+  &.car3 {
+    select[data-category="color"] {
+      & ~ div.modifications {
+        .mod-option:nth-child(1) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+  &.car4 {
+    select[data-category="color"] {
+      & ~ div.modifications {
+        .mod-option:nth-child(1) > .color {
+          background-color: @black;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @white;
+        }
+      }
+    }
+  }
+  &.car5 {
+    select[data-category="color"] {
+      & ~ div.modifications {
+        .mod-option:nth-child(1) > .color {
+          background-color: @white;
+        }
+        .mod-option:nth-child(2) > .color {
+          background-color: @blue;
+        }
+        .mod-option:nth-child(3) > .color {
+          background-color: @yellow;
+        }
+        .mod-option:nth-child(4) > .color {
+          background-color: @red;
+        }
+        .mod-option:nth-child(5) > .color {
+          background-color: @green;
+        }
+        .mod-option:nth-child(6) > .color {
+          background-color: @black;
+        }
+      }
+    }
+  }
+
+  width: 100%;
+  height:100%;
+  max-height: 533px;
+  max-width: 400px;
+
+  min-width: 270px;
+  min-height: 320px;
+
+  margin: 0 auto;
+
+  .title {
+    img.close {
+      float: right;
+      margin-top: 7px;
+    }
+    padding-right: 10px;
+  }
+
+  #customizer-loader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &.submit {
+      opacity: 1;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    background: url("/media/mobile/images/carcustomizer/background.jpg");
+    background-position: center center;
+    background-size: cover;
+    display: table;
+
+    .title {
+      width: 100%;
+      display: table-row;
+    }
+
+    .modal-content-ctr {
+      height: 100%;
+      width: 100%;
+      display: table-row;
+
+      div.customize-your-ride {
+        height: 9.2%;
+        width: 90%;
+        margin: 0 auto;
+
+        > img {
+          display: block;
+          max-height: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      .car-ctn {
+        width: 95%;
+        z-index: 4;
+        height: 35%;
+        margin: 0 auto;
+        position: relative;
+
+
+        .mycar {
+          width: 100%;
+          position: absolute;
+          top: 76%;
+
+          > div:not(.empty-space) {
+            position: absolute;
+            top: -50%;
+            left: 0;
+
+            > img {
+              width: 100%;
+            }
+          }
+
+          > .empty-space {
+            padding-top:67%;
+          }
+
+        }
+      }
+
+      .detail-ctr {
+        width: 86%;
+        margin: 0 auto;
+        height: 38%;
+        position:relative;
+        z-index: 6;
+
+
+        @selectHeight: 0.168;
+        .select-bg {
+          height: percentage(@selectHeight);
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+
+          border-radius: 2px;
+
+          background: rgb(30,32,32); /* Old browsers */
+          background: -moz-linear-gradient(top,  rgba(30,32,32,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,32,32,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top,  rgba(30,32,32,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top,  rgba(30,32,32,1) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+          background: -ms-linear-gradient(top,  rgba(30,32,32,1) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+          background: linear-gradient(to bottom,  rgba(30,32,32,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e2020', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+        }
+
+        > select {
+          display: block;
+          height: percentage(@selectHeight);
+          width: 100%;
+          -webkit-appearance: none;
+          border: 0;
+          border-radius: 2px;
+          color: white;
+          padding-left: 2.5%;
+          font-family: 'Avenir Medium', arial, halvetica, sans-serif;;
+          font-size: 17px;
+          letter-spacing: .5px;
+
+          background: transparent;
+          background-image: url('/media/mobile/images/carcustomizer/arrow.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: right center;
+
+          &[data-category="color"] {
+            & ~ div.modifications {
+
+              .mod-option .color {
+                opacity: 1;
+              }
+            }
+          }
+
+          &[data-category="tint"] {
+            & ~ div.modifications {
+              .mod-option {
+                width: 50%;
+              }
+
+              .mod-option .color {
+                opacity: 1;
+              }
+
+              .mod-option:nth-child(1) .color {
+                background-color: #404040;
+              }
+              .mod-option:nth-child(2) .color {
+                background-color: #262626;
+              }
+              .mod-option:nth-child(3) .color {
+                background-color: #191919;
+              }
+              .mod-option:nth-child(4) .color {
+                background-color: #000000;
+              }
+            }
+          }
+          &[data-category="wheels"] {
+            & ~ div.modifications {
+
+              .mod-option {
+                width: 50%;
+              }
+
+              .mod-option {
+                label {
+
+                }
+                .wheel {
+                  opacity: 1;
+                }
+                .border {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+          &[data-category="spoiler"] {
+            & ~ div.modifications {
+
+              .mod-option {
+
+                &:first-child {
+                  height: 100%;
+
+                  div {
+                    border-radius:26px;
+                  }
+                  .none, .none-border {
+                    opacity: 1;
+                  }
+                  label {
+                    width:52px;
+                    height:52px;
+                    top:14px;
+                    left:14px;
+                  }
+                }
+                label {
+                  width: 70px;
+                  height: 40px;
+                  top: 25px;
+                  left: 8px;
+                }
+
+                .spoiler {
+                  opacity: 1;
+                }
+                .border {
+                  opacity: 0;
+                }
+              }
+
+              .mod-option:nth-child(4) {
+                float: right;
+              }
+              .mod-option:nth-child(5) {
+                float: right;
+              }
+
+              .mod-option:nth-child(6) {
+                display: none;
+              }
+
+            }
+          }
+          &[data-category="decal"] {
+            & ~ div.modifications {
+
+              .mod-option {
+                &:first-child {
+                  div {
+                    border-radius:26px;
+                  }
+                  .none, .none-border {
+                    opacity: 1;
+                  }
+                  label {
+                    width:52px;
+                    height:52px;
+                    top:14px;
+                    left:14px;
+                  }
+                }
+                .decal {
+                  opacity: 1;
+
+                }
+              }
+
+              .mod-option:nth-child(4) {
+                float: right;
+              }
+              .mod-option:nth-child(5) {
+                float: right;
+              }
+              .mod-option:nth-child(6) {
+                display: none;
+              }
+            }
+          }
+          &[data-category="shadow"] {
+            & ~ div.modifications {
+
+              .mod-option {
+                &:first-child {
+                  div {
+                    border-radius:26px;
+                  }
+                  .none, .none-border {
+                    opacity: 1;
+                  }
+                  label {
+                    width:52px;
+                    height:52px;
+                    top:14px;
+                    left:14px;
+                  }
+                }
+                .neon {
+                  opacity: 1;
+                }
+              }
+
+              .mod-option:nth-child(4) {
+                display: none;
+              }
+              .mod-option:nth-child(5) {
+                display: none;
+              }
+              .mod-option:nth-child(6) {
+                display: none;
+              }
+            }
+          }
+
+        }
+
+        @modificationsHeight: 1 - @selectHeight;
+        .modifications {
+          height: percentage(@modificationsHeight);
+          width: 100%;
+
+          background: -moz-linear-gradient(top,  rgba(30,32,32,0.5) 0%, rgba(255,255,255,0.5) 100%); /* FF3.6+ */
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,32,32,0.5)), color-stop(100%,rgba(255,255,255,0.5))); /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top,  rgba(30,32,32,0.5) 0%,rgba(255,255,255,0.5) 100%); /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top,  rgba(30,32,32,0.5) 0%,rgba(255,255,255,0.5) 100%); /* Opera 11.10+ */
+          background: -ms-linear-gradient(top,  rgba(30,32,32,0.5) 0%,rgba(255,255,255,0.5) 100%); /* IE10+ */
+          background: linear-gradient(to bottom,  rgba(30,32,32,0.5) 0%,rgba(255,255,255,0.5) 100%); /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#801e2020', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
+
+          .mod-ctn {
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            overflow: hidden;
+            padding: 1.5%;
+
+
+            .mod-inner-wrapper {
+              width: 100%;
+              height: 100%;
+            }
+
+
+            .mod-option {
+              display: inline;
+              float: left;
+              height: 50%;
+              width: 33%;
+              position: relative;
+
+              &:first-child {
+                margin-left: 0;
+              }
+
+              > input[type=radio] {
+                display: none;
+
+                &:checked ~ div.border {
+                  border: 4px solid white;
+                }
+              }
+
+              > label, > div {
+                display: block;
+                width: 93%;
+                height: 90%;
+                position: absolute;
+                border-radius: 4px;
+                margin: auto;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+              }
+
+              > label {
+                cursor: pointer;
+                z-index: 101;
+              }
+
+              > div {
+                opacity: 0;
+
+                background-position: center center;
+                background-repeat: no-repeat;
+
+                &:not(.spoiler) {
+                  background-size: contain;
+                }
+
+                &.border {
+                  border: 2px solid #bbb;
+                  z-index: 100;
+                  opacity: 1;
+
+                  -webkit-transition: border 0.2s ease-in-out;
+                  -moz-transition: border 0.2s ease-in-out;
+                  -ms-transition: border 0.2s ease-in-out;
+                  -o-transition: border 0.2s ease-in-out;
+                  transition: border 0.2s ease-in-out;
+                }
+                &.wheel, &.spoiler {
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+
+                  -webkit-transition: all 0.3s ease-in-out;
+                  -moz-transition: all 0.3s ease-in-out;
+                  -ms-transition: all 0.3s ease-in-out;
+                  -o-transition: all 0.3s ease-in-out;
+                  transition: all 0.3s ease-in-out;
+                }
+                &.spoiler:not(.none) {
+                  width: 80px;
+                  height: 40px;
+                  top: 15px;
+                  left: 0;
+
+                  width: 80px;
+                  height: 50px;
+                  top: 15px;
+                  left: 0;
+
+                }
+
+                &.none {
+                  max-height: 62px;
+                  max-width: 62px;
+                  background-size: contain;
+                  background-image: url("/media/mobile/images/carcustomizer/none-mobile.png");
+                }
+                &.none-border {
+                  border-radius:26px;
+                  width:48px;
+                  height:48px;
+                  margin: 2px;
+                }
+              }
+
+              &:nth-child(1) {
+                input[type=radio]:checked ~ div {
+                  &.none {
+                    background-image: url("/media/mobile/images/carcustomizer/none-selected-mobile.png");
+                  }
+
+                }
+              }
+
+              &:nth-child(2) {
+                .neon {
+                  background-image: url("/media/images/dashboard/customize/shadow/neon1.png");
+                }
+                .spoiler {
+                  background-image: url("/media/images/dashboard/customize/spoilers/spoiler1.png");
+                }
+
+                input[type=radio]:checked ~ div {
+                  &.spoiler {
+                    background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler1.png");
+                  }
+                }
+              }
+
+              &:nth-child(3) {
+                .neon {
+                  background-image: url("/media/images/dashboard/customize/shadow/neon2.png");
+                }
+                .spoiler {
+                  background-image: url("/media/images/dashboard/customize/spoilers/spoiler2.png");
+                }
+                input[type=radio]:checked ~ div {
+                  &.spoiler {
+                    background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler2.png");
+                  }
+                }
+              }
+
+              &:nth-child(4) {
+                .spoiler {
+                  background-image: url("/media/images/dashboard/customize/spoilers/spoiler3.png");
+                }
+                input[type=radio]:checked ~ div {
+                  &.spoiler {
+                    background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler3.png");
+                  }
+                }
+              }
+
+              &:nth-child(5) {
+                .spoiler {
+                  background-image: url("/media/images/dashboard/customize/spoilers/spoiler4.png");
+                }
+                input[type=radio]:checked ~ div {
+                  &.spoiler {
+                    background-image: url("/media/images/dashboard/customize/spoilers/selected-spoiler4.png");
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+      .submit-ctn {
+        text-align: center;
+        width: 194px;
+        height: 60px;
+        margin: 0 auto;
+        left: 22px;
+        top: 20px;
+        position: relative;
+        z-index: 10;
+        .apply-changes {
+          display: block;
+          float: left;
+        }
+        .speaker {
+          display: block;
+          float: left;
+          margin-top: 13px;
+        }
+      }
+    }
+    .magnaflow {
+      margin-top: 40px;
+      z-index: 10;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+#customize-modal.car0 .mod-option:nth-child(1) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel10.png');
+}
+#customize-modal.car0 .mod-option:nth-child(1) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel10.png');
+}
+#customize-modal.car0 .mod-option:nth-child(2) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel5.png');
+}
+#customize-modal.car0 .mod-option:nth-child(2) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel5.png');
+}
+#customize-modal.car0 .mod-option:nth-child(3) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel6.png');
+}
+#customize-modal.car0 .mod-option:nth-child(3) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel6.png');
+}
+#customize-modal.car0 .mod-option:nth-child(4) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel9.png');
+}
+#customize-modal.car0 .mod-option:nth-child(4) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel9.png');
+}
+
+#customize-modal.car0 .mod-option:nth-child(2) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal25.png');
+}
+#customize-modal.car0 .mod-option:nth-child(3) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal26.png');
+}
+#customize-modal.car0 .mod-option:nth-child(4) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal24.png');
+}
+#customize-modal.car0 .mod-option:nth-child(5) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal23.png');
+}
+
+
+#customize-modal.car1 .mod-option:nth-child(1) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel1.png');
+}
+#customize-modal.car1 .mod-option:nth-child(1) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel1.png');
+}
+#customize-modal.car1 .mod-option:nth-child(2) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel4.png');
+}
+#customize-modal.car1 .mod-option:nth-child(2) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel4.png');
+}
+#customize-modal.car1 .mod-option:nth-child(3) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel3.png');
+}
+#customize-modal.car1 .mod-option:nth-child(3) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel3.png');
+}
+#customize-modal.car1 .mod-option:nth-child(4) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel2.png');
+}
+#customize-modal.car1 .mod-option:nth-child(4) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel2.png');
+}
+
+#customize-modal.car1 .mod-option:nth-child(2) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal19.png');
+}
+#customize-modal.car1 .mod-option:nth-child(3) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal20.png');
+}
+#customize-modal.car1 .mod-option:nth-child(4) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal21.png');
+}
+#customize-modal.car1 .mod-option:nth-child(5) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal22.png');
+}
+
+
+#customize-modal.car2 .mod-option:nth-child(1) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel4.png');
+}
+#customize-modal.car2 .mod-option:nth-child(1) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel4.png');
+}
+#customize-modal.car2 .mod-option:nth-child(2) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel7.png');
+}
+#customize-modal.car2 .mod-option:nth-child(2) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel7.png');
+}
+#customize-modal.car2 .mod-option:nth-child(3) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel2.png');
+}
+#customize-modal.car2 .mod-option:nth-child(3) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel2.png');
+}
+#customize-modal.car2 .mod-option:nth-child(4) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel8.png');
+}
+#customize-modal.car2 .mod-option:nth-child(4) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel8.png');
+}
+#customize-modal.car2 .mod-option:nth-child(2) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal6.png');
+}
+#customize-modal.car2 .mod-option:nth-child(3) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal5.png');
+}
+#customize-modal.car2 .mod-option:nth-child(4) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal7.png');
+}
+#customize-modal.car2 .mod-option:nth-child(5) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal8.png');
+}
+
+
+#customize-modal.car3 .mod-option:nth-child(1) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel4.png');
+}
+#customize-modal.car3 .mod-option:nth-child(1) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel4.png');
+}
+#customize-modal.car3 .mod-option:nth-child(2) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel2.png');
+}
+#customize-modal.car3 .mod-option:nth-child(2) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel2.png');
+}
+#customize-modal.car3 .mod-option:nth-child(3) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel6.png');
+}
+#customize-modal.car3 .mod-option:nth-child(3) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel6.png');
+}
+#customize-modal.car3 .mod-option:nth-child(4) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel5.png');
+}
+#customize-modal.car3 .mod-option:nth-child(4) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel5.png');
+}
+
+#customize-modal.car3 .mod-option:nth-child(2) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal15.png');
+}
+#customize-modal.car3 .mod-option:nth-child(3) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal16.png');
+}
+#customize-modal.car3 .mod-option:nth-child(4) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal18.png');
+}
+#customize-modal.car3 .mod-option:nth-child(5) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal17.png');
+}
+
+
+#customize-modal.car4 .mod-option:nth-child(1) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel4.png');
+}
+#customize-modal.car4 .mod-option:nth-child(1) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel4.png');
+}
+#customize-modal.car4 .mod-option:nth-child(2) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel7.png');
+}
+#customize-modal.car4 .mod-option:nth-child(2) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel7.png');
+}
+#customize-modal.car4 .mod-option:nth-child(3) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel2.png');
+}
+#customize-modal.car4 .mod-option:nth-child(3) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel2.png');
+}
+#customize-modal.car4 .mod-option:nth-child(4) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel8.png');
+}
+#customize-modal.car4 .mod-option:nth-child(4) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel8.png');
+}
+
+#customize-modal.car4 .mod-option:nth-child(2) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal13.png');
+}
+#customize-modal.car4 .mod-option:nth-child(3) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal9.png');
+}
+#customize-modal.car4 .mod-option:nth-child(4) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal14.png');
+}
+#customize-modal.car4 .mod-option:nth-child(5) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal8.png');
+}
+
+
+#customize-modal.car5 .mod-option:nth-child(1) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel4.png');
+}
+#customize-modal.car5 .mod-option:nth-child(1) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel4.png');
+}
+#customize-modal.car5 .mod-option:nth-child(2) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel8.png');
+}
+#customize-modal.car5 .mod-option:nth-child(2) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel8.png');
+}
+#customize-modal.car5 .mod-option:nth-child(3) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel2.png');
+}
+#customize-modal.car5 .mod-option:nth-child(3) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel2.png');
+}
+#customize-modal.car5 .mod-option:nth-child(4) .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/wheel7.png');
+}
+#customize-modal.car5 .mod-option:nth-child(4) input[type=radio]:checked ~ .wheel {
+  background-image: url('/media/images/dashboard/customize/wheels/selected-wheel7.png');
+}
+
+#customize-modal.car5 .mod-option:nth-child(2) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal10.png');
+}
+#customize-modal.car5 .mod-option:nth-child(3) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal9.png');
+}
+#customize-modal.car5 .mod-option:nth-child(4) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal11.png');
+}
+#customize-modal.car5 .mod-option:nth-child(5) .decal {
+  background-image: url('/media/images/dashboard/customize/decals/decal12.png');
+}
+
