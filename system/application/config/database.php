@@ -60,26 +60,20 @@ $active_record = TRUE;
 // }
 
 if (ENVIRONMENT == 'development') {
-	$db['default']['hostname'] = 'ec2-54-235-165-180.compute-1.amazonaws.com';
-	$db['default']['username'] = 'Rac3T039h8sdL30n';
-	$db['default']['password'] = 'KYtqRezk28mHEZ9Uxr';
-	$db['default']['database'] = 'racetodeleon';
+	$db['default']['hostname'] = '';
+	$db['default']['username'] = '';
+	$db['default']['password'] = '';
+	$db['default']['database'] = '';
 }elseif (ENVIRONMENT == 'staging') {
-	// phase1 staging DB
-	$db['default']['hostname'] = 'ec2-54-204-43-118.compute-1.amazonaws.com';
-	$db['default']['username'] = 'Rac3T039h8sdL30n';
-	$db['default']['password'] = 'KYtqRezk28mHEZ9Uxr';
-	$db['default']['database'] = 'racetodeleon';
+	$db['default']['hostname'] = '';
+	$db['default']['username'] = '';
+	$db['default']['password'] = '';
+	$db['default']['database'] = '';
 }elseif(ENVIRONMENT == 'stagingphase2'){
-	$db['default']['hostname'] = 'ec2-54-235-165-180.compute-1.amazonaws.com';
-	$db['default']['username'] = 'Rac3T039h8sdL30n';
-	$db['default']['password'] = 'KYtqRezk28mHEZ9Uxr';
-	$db['default']['database'] = 'racetodeleon';
-}else{
-	$db['default']['hostname'] = 'prod-racetodeleon.c1yx6bzyxlyk.us-east-1.rds.amazonaws.com';
-	$db['default']['username'] = 'Rac3T039h8sdL30n';
-	$db['default']['password'] = 'KYtqRezk28mHEZ9Uxr';
-	$db['default']['database'] = 'racetodeleon';
+	$db['default']['hostname'] = '';
+	$db['default']['username'] = '';
+	$db['default']['password'] = '';
+	$db['default']['database'] = '';
 }
 
 
